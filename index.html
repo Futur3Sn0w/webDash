@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webDash</title>
     <link rel="stylesheet" href="css.css">
     <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="openSettings" onclick="openSettings()"></div>
+<body onload="wallSet()">
+    <div class="screenOverlay" id="screenOverlay" onclick="closeSettings()"></div>
+    <div class="openSettings" onclick="openSettings()">
+        <i class="fa-solid fa-gear"></i>
+    </div>
     <div class="settingsBox" data-settingsTitle="Settings" id="settingsBox">
         <div class="settingsClose" onclick="closeSettings()">
             <i class="fa-solid fa-xmark"></i>
@@ -18,10 +20,18 @@
             <div onclick="openTab(event, 'settContBackground')" class="tab backgroundTab selTab">Background</div>
             <div onclick="openTab(event, 'settContClock')" class="tab clockTab">Clock</div>
         </div>
-        <div class="contentView">
+        <div class="views">
 
             <div class="settView backgroundSettingsView" id="settContBackground">
-                background settings
+                <div class="radioContainer">
+                    <input type="radio" name="background" id="bgUnsplash" class="bgOption" onclick="bgType(id)" checked>
+                    <label for="bgUnsplash">Unsplash Image (Beta)</label>
+                </div>
+                <div class="radioContainer">
+                    <input type="radio" name="background" id="bgColor" class="bgOption" onclick="bgType(id)">
+                    <label for="bgColor">Custom Color</label>
+                    <input type="color" id="bgColorPicker" name="background" value="#ff0000" on>
+                </div>
             </div>
 
             <div class="settView clockSettingsView" style="display: none;" id="settContClock">
