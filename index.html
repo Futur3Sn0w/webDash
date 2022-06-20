@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webDash</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="openSettings" onclick="openSettings()"></div>
+    <div class="settingsBox" data-settingsTitle="Settings" id="settingsBox">
+        <div class="settingsClose" onclick="closeSettings()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="tabStrip">
+            <div onclick="openTab(event, 'settContBackground')" class="tab backgroundTab selTab">Background</div>
+            <div onclick="openTab(event, 'settContClock')" class="tab clockTab">Clock</div>
+        </div>
+        <div class="contentView">
+
+            <div class="settView backgroundSettingsView" id="settContBackground">
+                background settings
+            </div>
+
+            <div class="settView clockSettingsView" style="display: none;" id="settContClock">
+                clock settings
+            </div>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
